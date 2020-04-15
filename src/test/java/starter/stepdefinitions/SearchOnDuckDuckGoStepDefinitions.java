@@ -28,18 +28,16 @@ public class SearchOnDuckDuckGoStepDefinitions {
         theActorCalled(actor).attemptsTo(NavigateTo.theDuckDuckGoHomePage());
     }
 
-    @When("he searches for \"$term\"")
+    @When("he searches for \"$keyword\"")
     public void search_for(String term) {
         theActorInTheSpotlight().attemptsTo( SearchFor.term(term) );
     }
 
-    @Then("all the result titles should contain the word \"$term\"")
+    @Then("all the result titles should contain the word \"$keyword\"")
     public void all_the_result_titles_should_contain_the_word(String term) {
         theActorInTheSpotlight().should(
-                seeThat("search result titles",
-                        SearchResult.titles(), hasSize(greaterThan(0))),
-                seeThat("search result titles",
-                        SearchResult.titles(), everyItem(containsIgnoringCase(term)))
+                seeThat("search result summaries",
+                        SearchResult.summaries(), everyItem(containsIgnoringCase(term)))
         );
     }
 }

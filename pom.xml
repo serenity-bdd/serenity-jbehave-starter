@@ -11,8 +11,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>2.0.81</serenity.version>
-        <serenity.maven.version>2.0.81</serenity.maven.version>
+        <serenity.version>2.2.1</serenity.version>
+        <serenity.maven.version>2.2.1</serenity.maven.version>
         <serenity.jbehave.version>1.46.0</serenity.jbehave.version>
         <encoding>UTF-8</encoding>
         <tags></tags>
@@ -27,7 +27,7 @@
             </snapshots>
             <id>central</id>
             <name>bintray</name>
-            <url>http://jcenter.bintray.com</url>
+            <url>https://jcenter.bintray.com</url>
         </repository>
     </repositories>
     <pluginRepositories>
@@ -37,7 +37,7 @@
             </snapshots>
             <id>central</id>
             <name>bintray-plugins</name>
-            <url>http://jcenter.bintray.com</url>
+            <url>https://jcenter.bintray.com</url>
         </pluginRepository>
     </pluginRepositories>
 
@@ -155,6 +155,14 @@
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.serenity-bdd</groupId>
+                        <artifactId>serenity-core</artifactId>
+                        <version>${serenity.version}</version>
+
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
